@@ -2,10 +2,10 @@
 
 #include<iostream>
 using namespace std;
-//#include<conio>
-//#include<string>
-//#include<stdlib>
-//#include<stdio>
+#include<conio>
+#include<string>
+#include<stdlib>
+#include<stdio>
 // define maximum number of patients in a queue
 #define MAXPATIENTS 100
 
@@ -169,7 +169,7 @@ patient InputPatient (void)
         // rejected
         strcpy(p.ID,"");
         cout << "\nError: Data not valid. Operation cancelled.\n";
-        //getch();
+     getch();
     }
    return p;
 }
@@ -208,7 +208,7 @@ void DepartmentMenu (queue * q)
    while (choice != 6)
     {
        // clear screen
-       //clrscr();
+      clrscr();
        // print menu
        cout << "  \n\nWelcome to Department:\n\n " << q->DepartmentName;
        cout << "  \nPlease enter your choice:\n";
@@ -240,7 +240,7 @@ void DepartmentMenu (queue * q)
            }
             OutputPatient(&p);
             cout << "\n\nPress any key........\n\n";
-            //getch();
+            getch();
       }
      break;
 
@@ -249,7 +249,7 @@ void DepartmentMenu (queue * q)
      if (p.ID[0])
          {
         success = q->AddPatientAtBeginning(p);
-        //clrscr();
+        clrscr();
           if (success)
             {
               cout << "\nPatient added:\n";
@@ -262,13 +262,13 @@ void DepartmentMenu (queue * q)
 
               OutputPatient(&p);
               cout << "\nPress any key\n";
-              //getch();
+              getch();
          }
      break;
 
       case 3:   // Take out patient for operation
      p = q->GetNextPatient();
-     //clrscr();
+     clrscr();
      if (p.ID[0])
         {
            cout << "\nPatient to operate:\n";
@@ -278,7 +278,7 @@ void DepartmentMenu (queue * q)
            cout << "\nThere is no patient to operate.\n";
         }
            cout << "\nPress any key\n";
-           //getch();
+           getch();
            break;
 
       case 4:   // Remove dead patient from queue
@@ -286,7 +286,7 @@ void DepartmentMenu (queue * q)
      if (p.ID[0])
        {
         success = q->RemoveDeadPatient(&p);
-        //clrscr();
+        clrscr();
           if (success)
               {
             cout << "\nPatient removed:\n";
@@ -298,15 +298,15 @@ void DepartmentMenu (queue * q)
               }
         OutputPatient(&p);
         cout << "\nPress any key\n";
-        //getch();
+       getch();
        }
      break;
 
       case 5:   // List queue
-     //clrscr();
+     clrscr();
      q->OutputList();
      cout << "\nPress any key\n";
-     //getch();  break;
+     getch();  break;
      }
       }
 }
@@ -315,7 +315,7 @@ void DepartmentMenu (queue * q)
 // main function defining queues and main menu
 int main ()
 {
-//clrscr();
+clrscr();
    int i, MenuChoice = 0;
    // define three queues
    char s[100],s1[100];
@@ -327,9 +327,9 @@ int main ()
 
    while (MenuChoice != 4)
     {
-       // clear screen
-       //clrscr();
-       // print menu
+       
+       clrscr();
+       
        cout << "\n     Welcome to City Hospital\n\n";
        cout<<"       ==============================\n\n";
        cout << " Please enter your choice:                            ";
